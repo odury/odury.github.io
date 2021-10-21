@@ -1,0 +1,81 @@
+Barrio:
+<br>
+<select name="barrio" id="barrio" onchange="fetcher()">
+</select>
+<br>
+
+Renta anual:
+<br>
+<select name="renta_anual" id="renta_anual" onchange="fetcher()">
+</select>
+<br>
+Precio:
+<br>
+<div id="precio">
+    <p>0</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+    integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    function generatebarrios(data) {
+        // get uniques
+        var uniques = data.reduce(function (a, d) {
+            if (a.indexOf(d.barrio) === -1) {
+                a.push(d.barrio);
+            }
+            return a;
+        }, []);
+        // remove nulls
+        uniques = uniques.filter(n => n)
+        // populate options
+        let optionList = document.getElementById('barrio').options;
+        uniques.forEach(option =>
+            optionList.add(
+                new Option(option, option)
+            )
+        );
+    }
+    function generaterentas(data) {
+        // get uniques
+        var uniques = data.reduce(function (a, d) {
+            if (a.indexOf(d.renta_anual) === -1) {
+                a.push(d.renta_anual);
+            }
+            return a;
+        }, []);
+        // remove nulls
+        uniques = uniques.filter(n => n)
+        // populate options
+        let optionList = document.getElementById('renta_anual').options;
+        uniques.forEach(option =>
+            optionList.add(
+                new Option(option, option)
+            )
+        );
+    }
+
+    function changer(data) {
+        // change result
+        var barrio = document.getElementById('barrio').value
+        var renta_anual = document.getElementById('renta_anual').value
+        var fetched = data.filter(a => a.barrio == barrio && a.renta_anual == renta_anual);
+        document.getElementById("precio").innerHTML = fetched[0]["m2"]
+    }
+    function fetcher() {
+        // load data
+        Papa.parse('./data/bbdd_elrealista.csv', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function (results) {
+                generatebarrios(results.data)
+                generaterentas(results.data)
+                changer(results.data)
+            }
+        });
+    }
+
+    fetcher()
+</script>
