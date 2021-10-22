@@ -19,6 +19,12 @@ Metros cuadrados:
 
 <h1>Calculadora esfuerzo financiero</h1>
 
+Edad?:
+<br>
+<input type="number" id="age" name="ge" min="1" max="200" value="30" onchange="mortgageCalculator()">
+años
+<br>
+
 Cual es mi salario neto medio anual?:
 <br>
 <input type="number" id="salary" name="salary" min="1" max="999999999" value="30000" onchange="mortgageCalculator()">
@@ -53,21 +59,27 @@ Coste total hipoteca: <div id="totalcost"></div> euros
 <br>
 Coste total intereses: <div id="totalinterests"></div> euros
 <br>
-Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de lo que me ha costado ahorrar
+Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de lo que me ha costado
+ahorrar
 la entrada.
 <br>
 Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de trabajo ademas de lo que me ha
 costado ahorrar la entrada.
 <br>
-Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de lo que me ha
+Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de lo que me
+ha
 costado ahorrar la entrada.
-
+<br>
+<div id="chart"></div>
 
 
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
     integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.29.0/apexcharts.min.js"
+    integrity="sha512-fe6OklXva8AWoqdwgkE7Ni4uWgHGWxFQWZx4lYehzY2Qrst5YfogjAbnLd6egsoTrnjGI9/LYt1Ont2cKNbP2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     function generatebarrios(data) {
@@ -147,4 +159,106 @@ costado ahorrar la entrada.
         document.getElementById("weeksforinterests").innerHTML = Math.round((totalcost - price) / weeklysalary)
     }
     mortgageCalculator()
+
+    function plotter() {
+        var weeks = parseFloat(document.getElementById("weeksfortotalcost").innerHTML)
+        var age = parseFloat(document.getElementById('age').value)
+        var completeyears = Math.floor(weeks / 52)
+        var remainingweeks = weeks - (completeyears * 52)
+        var finalagecomplete = age + completeyears
+        var lastage = finalagecomplete + 1
+        var series = []
+        for (let step = 18; step < 91; step++) {
+            if (step === (finalagecomplete+1)) {
+                var weekslst = []
+                for (let wstep = 1; wstep < 53; wstep++) {
+                    if (wstep <= remainingweeks) {
+                        weekslst.push(1)
+                    } else {
+                        weekslst.push(0)
+                    }
+                }
+                var serie = {
+                    name: step,
+                    data: weekslst
+                }
+                series.push(serie)
+            } else if (step >= age && step <= finalagecomplete) {
+                var serie = {
+                    name: step,
+                    data: Array(52).fill(1)
+                }
+                series.push(serie)
+            } else {
+                var serie = {
+                    name: step,
+                    data: Array(52).fill(0)
+                }
+                series.push(serie)                
+            }
+        }
+        var options = {
+            series: series,
+            chart: {
+                height: 1350,
+                type: 'heatmap',
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 80,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            title: {
+                text: ''
+            },
+            yaxis: {
+                title: { text: 'Edad' },
+                reversed: true
+            },
+            xaxis: {
+                title: { text: 'Semana' },
+            },
+            legend: {
+                show: false,
+            },
+            plotOptions: {
+                heatmap: {
+                    radius: 2,
+                    enableShades: true,
+                    shadeIntensity: 0.5,
+                    reverseNegativeShade: true,
+                    distributed: false,
+                    useFillColorAsStroke: false,
+                    colorScale: {
+                        ranges: [{
+                            from: 0,
+                            to: 0.5,
+                            color: "#008FFB",
+                        }, {
+                            from: 0.5,
+                            to: 1,
+                            color: "#ff0000",
+                        }],
+                        inverse: false,
+                        min: undefined,
+                        max: undefined
+                    },
+                }
+            },
+        };
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    }
+    plotter()
 </script>
