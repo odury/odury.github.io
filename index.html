@@ -1,3 +1,5 @@
+<h1>Calculadora metros cuadrados</h1>
+
 Barrio:
 <br>
 <select name="barrio" id="barrio" onchange="fetcher()">
@@ -9,11 +11,60 @@ Renta anual:
 <select name="renta_anual" id="renta_anual" onchange="fetcher()">
 </select>
 <br>
-Precio:
+Metros cuadrados:
 <br>
 <div id="precio">
-    <p>0</p>
 </div>
+
+
+<h1>Calculadora esfuerzo financiero</h1>
+
+Cual es mi salario neto medio anual?:
+<br>
+<input type="number" id="salary" name="salary" min="1" max="999999999" value="30000" onchange="mortgageCalculator()">
+euros
+<br>
+
+Cuando cuesta mi casa?:
+<br>
+<input type="number" id="price" name="price" min="0" max="999999999" value="170000" onchange="mortgageCalculator()">
+euros
+<br>
+
+Entrada?:
+<br>
+<input type="number" id="down" name="down" min="0" max="999999999" value="34000" onchange="mortgageCalculator()"> euros
+<br>
+
+Duracion de la hipoteca?:
+<br>
+<input type="number" id="years" name="years" min="1" max="100" value="30" onchange="mortgageCalculator()"> años
+<br>
+
+Que interes me ofrece el banco?:
+<br>
+<input type="number" id="interest" name="interest" min="0" max="100" value="1.75" step="0.01"
+    onchange="mortgageCalculator()">%
+<br>
+
+Cuota mensual: <div id="payment"></div> euros
+<br>
+Coste total hipoteca: <div id="totalcost"></div> euros
+<br>
+Coste total intereses: <div id="totalinterests"></div> euros
+<br>
+Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de que me a costado ahorrar
+la entrada.
+<br>
+Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de trabajo ademas de que me a
+costado ahorrar la entrada.
+<br>
+Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de que me a
+costado ahorrar la entrada.
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
     integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
@@ -78,4 +129,22 @@ Precio:
     }
 
     fetcher()
+
+    function mortgageCalculator() {
+        var salary = document.getElementById('salary').value
+        var price = document.getElementById('price').value
+        var down = document.getElementById('down').value
+        var years = document.getElementById('years').value
+        var monthlyinterest = document.getElementById('interest').value / 100 / 12
+        var monthlypayment = (price - down) / ((1 - ((1 + monthlyinterest) ** (-years * 12))) / monthlyinterest)
+        var totalcost = monthlypayment * 12 * years
+        var weeklysalary = salary / 52
+        document.getElementById("payment").innerHTML = Math.round(monthlypayment * 100) / 100
+        document.getElementById("totalcost").innerHTML = Math.round(totalcost * 100) / 100
+        document.getElementById("totalinterests").innerHTML = Math.round((totalcost - price) * 100) / 100
+        document.getElementById("weeksfortotalcost").innerHTML = Math.round(totalcost / weeklysalary)
+        document.getElementById("weeksforcapital").innerHTML = Math.round(price / weeklysalary)
+        document.getElementById("weeksforinterests").innerHTML = Math.round((totalcost - price) / weeklysalary)
+    }
+    mortgageCalculator()
 </script>
