@@ -69,9 +69,9 @@ function generatebarrios(data) {
         var monthlypayment = (price - down) / ((1 - ((1 + monthlyinterest) ** (-years * 12))) / monthlyinterest)
         var totalcost = monthlypayment * 12 * years
         var weeklysalary = salary / 52
-        document.getElementById("payment").innerHTML = Math.round(monthlypayment * 100) / 100
-        document.getElementById("totalcost").innerHTML = Math.round(totalcost * 100) / 100
-        document.getElementById("totalinterests").innerHTML = Math.round((totalcost - price) * 100) / 100
+        document.getElementById("payment").innerHTML = Math.round(monthlypayment * 100) / 100 +' €'
+        document.getElementById("totalcost").innerHTML = Math.round(totalcost * 100) / 100 +' €'
+        document.getElementById("totalinterests").innerHTML = Math.round((totalcost - price) * 100) / 100 +' €'
         document.getElementById("weeksfortotalcost").innerHTML = Math.round(totalcost / weeklysalary)
         document.getElementById("weeksforcapital").innerHTML = Math.round(price / weeklysalary)
         document.getElementById("weeksforinterests").innerHTML = Math.round((totalcost - price) / weeklysalary)
