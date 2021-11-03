@@ -1,264 +1,326 @@
-<h1>Calculadora metros cuadrados</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-Barrio:
-<br>
-<select name="barrio" id="barrio" onchange="fetcher()">
-</select>
-<br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device.width">
+    <title> El realista </title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
 
-Renta anual:
-<br>
-<select name="renta_anual" id="renta_anual" onchange="fetcher()">
-</select>
-<br>
-Metros cuadrados:
-<br>
-<div id="precio">
-</div>
+<body>
+
+    <div class="page-wrapper">
+
+        <div class="marquee top">
+            <div class="marquee-text">El realista  | Calcula el precio de tu vienda</div>
+            <div class="marquee-text"> El realista | Maria Razquin - Elisava 2021</div>
+            <div class="marquee-text">El realista |  Calcula el precio de tu vienda</div>
+            <div class="marquee-text"> El realista | Maria Razquin - Elisava 2021</div>
+        </div>
+        <div class="marquee bottom">
+            <div class="marquee-text">El realista</div>
+            <div class="marquee-text">El realista</div>
+            <div class="marquee-text">El realista</div>
+        </div>
+        <div id="slide-1"></div>
+        <div class="page-slide">
+            <div class="slide s1 container-lg">
+                <h1>Bienvenido/a</h1>
+                <div class="image"><img src="images/el-realista.png"><img></div>
+                <div class="text">
+                    <p>Bienvenido/a al realista, una dosis de perspectiva y datos sobre la compra de tu futuro hogar.
+                        Esta es una invitación a profundizar en el reto de la vivienda en Madrid y a descubrir cómo te
+                        afecta a ti en primera persona.
+                    </p>
+                </div>
+                <a class="continue" href="#slide-2">Explorar</a>
+            </div>
+        </div>
+        <div id="slide-2"></div>
+        <div class="page-slide">
+            <div class="slide s2 container-lg">
+                <a class="back" href="#slide-1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg></a>
+
+                <div class="text">
+                    <p style="margin-top: 0;">La tasa de emancipación de los jóvenes en España está en mínimos
+                        históricos, así que sientete afortunado/a si lees esto desde tu propia habitación y de lo
+                        contrario, no te preocupes, tan solo el 15,8% de los jóvenes lo está.</p>
+                    <p>Los jóvenes que vivimos en Madrid gastamos de media, en alquilar una habitación el 40% de nuestro
+                        sueldo. Para poder vivir solas, tendríamos que dedicar el 110% de nuestros ingresos a pagar el
+                        alquiler. En el caso de una hipoteca, deberíamos utilizar el 90% de nuestra nómina para afrontar
+                        la compra de una vivienda. </p>
+                    <p>El coste de tener arrendada una habitación ya es de 425 euros de media. Si se trata de una casa
+                        completa, el precio medio asciende a los 1.180 euros.</p>
+                </div>
+
+                <a class="continue" href="#slide-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div id="slide-3"></div>
+        <div class="page-slide">
+         
+
+            <div id="slides" class="slide">
+                <a class="back" href="#slide-1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                    fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                </svg></a>
+                <input checked type="radio" name="slider" id="slide1" class="set" />
+                <input type="radio" name="slider" id="slide2" class="set" />
+                <input type="radio" name="slider" id="slide3" class="set" />
+                <input type="radio" name="slider" id="slide4" class="set" />  
+                        
+                <div class="mask">    
+                  <div class="overflow">
+                    
+                    <div class="slide-el"> <div class="text">
+                        <p style="margin-top: 0;">En Madrid capital el precio medio del metro cuadrado de la vivienda se
+                            ha incrementado un 41% en el último lustro, pasando de 2.774 euros por metro cuadrado en
+                            junio de 2016 a los 3.903 euros por metro cuadrado en junio de 2021.</p>
+                    </div></div>
+                    <div class="slide-el"> <div class="image"><iframe width="1000" height="620" frameborder="0"
+                        src="https://mrazquin.carto.com/builder/4b48f686-f725-47c7-ab50-5e916b947521/embed"
+                        allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen
+                        msallowfullscreen></iframe></div></div>
+                    <div class="slide-el">  <div class="text">
+                        <p style="margin-top: 0;">Estas cifras que presenta el panorama actual genera dos realidades
+                            posibles para la población jóven que plantea acceder a una hipoteca: vivir en pisos pequeños
+                            o moverse a las periferias de la ciudad.
+                        </p>
+                    </div>
+                    <a class="continue" href="#slide-4"> Continuar
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+                </div>
+              
+                  </div>    
+                </div>
+              
+                <div id="controls" onclick="">   
+                  <label for="slide1">1<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg></label>
+                  <label for="slide2">2<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg></label>
+                  <label for="slide3">3<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg></label>
+    
+                </div>
+              </div>
+                          
+
+           <!--  <div class="horizontal-slider container-lg">
+                <div id="one" class="slide s3 container-lg" >
+                    <a class="back" href="#slide-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                            fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                        </svg></a>
+                    <div class="text">
+                        <p style="margin-top: 0;">En Madrid capital el precio medio del metro cuadrado de la vivienda se
+                            ha incrementado un 41% en el último lustro, pasando de 2.774 euros por metro cuadrado en
+                            junio de 2016 a los 3.903 euros por metro cuadrado en junio de 2021.</p>
+                    </div>
+     
+                </div>
+                <div id="two" class="slide s3 container-lg" hidden='hidden' >
+                    <a class="back" href="#slide-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                            fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                        </svg></a>
+
+                    <div class="image"><iframe width="700" height="620" frameborder="0"
+                            src="https://mrazquin.carto.com/builder/4b48f686-f725-47c7-ab50-5e916b947521/embed"
+                            allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen
+                            msallowfullscreen></iframe></div>
+
+      
+                </div>
+                <div id="three" class="slide s3 container-lg" hidden >
+                    <a class="back" href="#slide-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                            fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                        </svg></a>
+                    <div class="text">
+                        <p style="margin-top: 0;">Estas cifras que presenta el panorama actual genera dos realidades
+                            posibles para la población jóven que plantea acceder a una hipoteca: vivir en pisos pequeños
+                            o moverse a las periferias de la ciudad.
+                        </p>
+                    </div>
+                    <a class="continue" href="#slide-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="next"
+                style="width: 100px; height: 100px; color: white; cursor: pointer; background-color: aquamarine;"
+                onClick="showNextSlider()"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                    fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                </svg></div>
+ -->
+        </div>
+
+        <div id="slide-4"></div>
+        <div class="page-slide">
+            <div class="slide s4 container-lg">
+                <a class="back" href="#slide-3"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg></a>
+
+                <h1>Calculadora metros cuadrados</h1>
+                <div class="text input-section">
+                    <p style="margin-top: 0;">¿En que <strong>barrio</strong> te gustaria vivir?
+                    </p>
+                    <select name="barrio" id="barrio" onchange="fetcher()">
+                    </select>
+                </div>
+                <div class="text input-section">
+                    <p style="margin-top: 0;">¿Cual es tu <strong>renta anual</strong>?
+                    </p>
+                    <select name="renta_anual" id="renta_anual" onchange="fetcher()">
+                    </select>
+                </div>
+
+                <div class="text">
+                    <div id="precio"> 
+                    </div>
+
+                    <a class="continue" href="#slide-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <h1>Calculadora metros cuadrados</h1>
+
+        <!--     Barrio:
+    <br>
+    <select name="barrio" id="barrio" onchange="fetcher()">
+    </select>
+    <br> -->
+
+        <!--    Renta anual:
+    <br>
+    <select name="renta_anual" id="renta_anual" onchange="fetcher()">
+    </select>
+    <br> -->
+
+        Metros cuadrados:
+        <br>
+        <div id="precio">
+        </div>
 
 
-<h1>Calculadora esfuerzo financiero</h1>
+        <h1>Calculadora esfuerzo financiero</h1>
 
-Edad?:
-<br>
-<input type="number" id="age" name="ge" min="1" max="200" value="30" onchange="mortgageCalculator()">
-años
-<br>
+        Edad?:
+        <br>
+        <input type="number" id="age" name="ge" min="1" max="200" value="30" onchange="mortgageCalculator()">
+        años
+        <br>
 
-Cual es mi salario neto medio anual?:
-<br>
-<input type="number" id="salary" name="salary" min="1" max="999999999" value="30000" onchange="mortgageCalculator()">
-euros
-<br>
+        Cual es mi salario neto medio anual?:
+        <br>
+        <input type="number" id="salary" name="salary" min="1" max="999999999" value="30000"
+            onchange="mortgageCalculator()">
+        euros
+        <br>
 
-Cuando cuesta mi casa?:
-<br>
-<input type="number" id="price" name="price" min="0" max="999999999" value="170000" onchange="mortgageCalculator()">
-euros
-<br>
+        Cuando cuesta mi casa?:
+        <br>
+        <input type="number" id="price" name="price" min="0" max="999999999" value="170000"
+            onchange="mortgageCalculator()">
+        euros
+        <br>
 
-Entrada?:
-<br>
-<input type="number" id="down" name="down" min="0" max="999999999" value="34000" onchange="mortgageCalculator()"> euros
-<br>
+        Entrada?:
+        <br>
+        <input type="number" id="down" name="down" min="0" max="999999999" value="34000"
+            onchange="mortgageCalculator()">
+        euros
+        <br>
 
-Duracion de la hipoteca?:
-<br>
-<input type="number" id="years" name="years" min="1" max="100" value="30" onchange="mortgageCalculator()"> años
-<br>
+        Duracion de la hipoteca?:
+        <br>
+        <input type="number" id="years" name="years" min="1" max="100" value="30" onchange="mortgageCalculator()"> años
+        <br>
 
-Que interes me ofrece el banco?:
-<br>
-<input type="number" id="interest" name="interest" min="0" max="100" value="1.75" step="0.01"
-    onchange="mortgageCalculator()">%
-<br>
+        Que interes me ofrece el banco?:
+        <br>
+        <input type="number" id="interest" name="interest" min="0" max="100" value="1.75" step="0.01"
+            onchange="mortgageCalculator()">%
+        <br>
 
-Cuota mensual: <div id="payment"></div> euros
-<br>
-Coste total hipoteca: <div id="totalcost"></div> euros
-<br>
-Coste total intereses: <div id="totalinterests"></div> euros
-<br>
-Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de lo que me ha costado
-ahorrar
-la entrada.
-<br>
-Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de trabajo ademas de lo que me ha
-costado ahorrar la entrada.
-<br>
-Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de lo que me
-ha
-costado ahorrar la entrada.
-<br>
-<div id="chart"></div>
+        Cuota mensual: <div id="payment"></div> euros
+        <br>
+        Coste total hipoteca: <div id="totalcost"></div> euros
+        <br>
+        Coste total intereses: <div id="totalinterests"></div> euros
+        <br>
+        Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de lo que me ha
+        costado
+        ahorrar
+        la entrada.
+        <br>
+        Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de trabajo ademas de lo que
+        me
+        ha
+        costado ahorrar la entrada.
+        <br>
+        Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de
+        lo
+        que me
+        ha
+        costado ahorrar la entrada.
+        <br>
+        <div id="chart"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+            integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.29.0/apexcharts.min.js"
+            integrity="sha512-fe6OklXva8AWoqdwgkE7Ni4uWgHGWxFQWZx4lYehzY2Qrst5YfogjAbnLd6egsoTrnjGI9/LYt1Ont2cKNbP2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="app.js"></script>
+</body>
 
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
-    integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.29.0/apexcharts.min.js"
-    integrity="sha512-fe6OklXva8AWoqdwgkE7Ni4uWgHGWxFQWZx4lYehzY2Qrst5YfogjAbnLd6egsoTrnjGI9/LYt1Ont2cKNbP2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    function generatebarrios(data) {
-        // get uniques
-        var uniques = data.reduce(function (a, d) {
-            if (a.indexOf(d.barrio) === -1) {
-                a.push(d.barrio);
-            }
-            return a;
-        }, []);
-        // remove nulls
-        uniques = uniques.filter(n => n)
-        // populate options
-        let optionList = document.getElementById('barrio').options;
-        uniques.forEach(option =>
-            optionList.add(
-                new Option(option, option)
-            )
-        );
-    }
-    function generaterentas(data) {
-        // get uniques
-        var uniques = data.reduce(function (a, d) {
-            if (a.indexOf(d.renta_anual) === -1) {
-                a.push(d.renta_anual);
-            }
-            return a;
-        }, []);
-        // remove nulls
-        uniques = uniques.filter(n => n)
-        // populate options
-        let optionList = document.getElementById('renta_anual').options;
-        uniques.forEach(option =>
-            optionList.add(
-                new Option(option, option)
-            )
-        );
-    }
-
-    function changer(data) {
-        // change result
-        var barrio = document.getElementById('barrio').value
-        var renta_anual = document.getElementById('renta_anual').value
-        var fetched = data.filter(a => a.barrio == barrio && a.renta_anual == renta_anual);
-        document.getElementById("precio").innerHTML = fetched[0]["m2"]
-    }
-    function fetcher() {
-        // load data
-        Papa.parse('./data/bbdd_elrealista.csv', {
-            header: true,
-            download: true,
-            dynamicTyping: true,
-            complete: function (results) {
-                generatebarrios(results.data)
-                generaterentas(results.data)
-                changer(results.data)
-            }
-        });
-    }
-
-    fetcher()
-
-    function mortgageCalculator() {
-        var salary = document.getElementById('salary').value
-        var price = document.getElementById('price').value
-        var down = document.getElementById('down').value
-        var years = document.getElementById('years').value
-        var monthlyinterest = document.getElementById('interest').value / 100 / 12
-        var monthlypayment = (price - down) / ((1 - ((1 + monthlyinterest) ** (-years * 12))) / monthlyinterest)
-        var totalcost = monthlypayment * 12 * years
-        var weeklysalary = salary / 52
-        document.getElementById("payment").innerHTML = Math.round(monthlypayment * 100) / 100
-        document.getElementById("totalcost").innerHTML = Math.round(totalcost * 100) / 100
-        document.getElementById("totalinterests").innerHTML = Math.round((totalcost - price) * 100) / 100
-        document.getElementById("weeksfortotalcost").innerHTML = Math.round(totalcost / weeklysalary)
-        document.getElementById("weeksforcapital").innerHTML = Math.round(price / weeklysalary)
-        document.getElementById("weeksforinterests").innerHTML = Math.round((totalcost - price) / weeklysalary)
-    }
-    mortgageCalculator()
-
-    function plotter() {
-        var weeks = parseFloat(document.getElementById("weeksfortotalcost").innerHTML)
-        var age = parseFloat(document.getElementById('age').value)
-        var completeyears = Math.floor(weeks / 52)
-        var remainingweeks = weeks - (completeyears * 52)
-        var finalagecomplete = age + completeyears
-        var lastage = finalagecomplete + 1
-        var series = []
-        for (let step = 18; step < 91; step++) {
-            if (step === (finalagecomplete+1)) {
-                var weekslst = []
-                for (let wstep = 1; wstep < 53; wstep++) {
-                    if (wstep <= remainingweeks) {
-                        weekslst.push(1)
-                    } else {
-                        weekslst.push(0)
-                    }
-                }
-                var serie = {
-                    name: step,
-                    data: weekslst
-                }
-                series.push(serie)
-            } else if (step >= age && step <= finalagecomplete) {
-                var serie = {
-                    name: step,
-                    data: Array(52).fill(1)
-                }
-                series.push(serie)
-            } else {
-                var serie = {
-                    name: step,
-                    data: Array(52).fill(0)
-                }
-                series.push(serie)                
-            }
-        }
-        var options = {
-            series: series,
-            chart: {
-                height: 1350,
-                type: 'heatmap',
-                animations: {
-                    enabled: true,
-                    easing: 'easeinout',
-                    speed: 80,
-                    animateGradually: {
-                        enabled: true,
-                        delay: 150
-                    },
-                    dynamicAnimation: {
-                        enabled: true,
-                        speed: 350
-                    }
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            title: {
-                text: 'La parte de mi vida que se lleva la hipoteca'
-            },
-            yaxis: {
-                title: { text: 'Edad' },
-                reversed: true
-            },
-            xaxis: {
-                title: { text: 'Semana' },
-            },
-            legend: {
-                show: false,
-            },
-            plotOptions: {
-                heatmap: {
-                    radius: 2,
-                    enableShades: true,
-                    shadeIntensity: 0.5,
-                    reverseNegativeShade: true,
-                    distributed: false,
-                    useFillColorAsStroke: false,
-                    colorScale: {
-                        ranges: [{
-                            from: 0,
-                            to: 0.5,
-                            color: "#008FFB",
-                        }, {
-                            from: 0.5,
-                            to: 1,
-                            color: "#ff0000",
-                        }],
-                        inverse: false,
-                        min: undefined,
-                        max: undefined
-                    },
-                }
-            },
-        };
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    }
-    plotter()
-</script>
+</html>
