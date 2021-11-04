@@ -374,3 +374,9 @@ opacity: 1;
     .graph .chart{
  overflow-y: scroll;
     }
+
+    .num{
+        padding: 0px 10px;
+        color: var(--main-color);
+        font-weight: 600;
+    }
