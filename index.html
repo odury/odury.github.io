@@ -79,8 +79,8 @@
 
 
             <div id="slides" class="slide">
-                <a style="margin-bottom: 2rem;" class="back" href="#slide-1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                        fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                <a style="margin-bottom: 2rem;" class="back" href="#slide-1"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="12" height="12" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
                     </svg></a>
@@ -102,10 +102,16 @@
                             </div>
                         </div>
                         <div class="slide-el">
-                            <div class="image"><iframe width="1000" height="620" frameborder="0"
+                            <div class="image">
+                                <iframe width="1000px" height="580" frameborder="0"
+                                    src="https://mrazquin.carto.com/builder/145e598f-1df7-4d4c-920f-c98a3ad1581b/embed"
+                                    allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen
+                                    msallowfullscreen></iframe>
+                                <!--    <iframe width="1000" height="620" frameborder="0"
                                     src="https://mrazquin.carto.com/builder/4b48f686-f725-47c7-ab50-5e916b947521/embed"
                                     allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen
-                                    msallowfullscreen></iframe></div>
+                                    msallowfullscreen></iframe> -->
+                            </div>
                         </div>
                         <div class="slide-el">
                             <div class="text">
@@ -129,9 +135,15 @@
                 </div>
 
                 <div id="controls" onclick="">
-                    <label class="control-btn" for="slide1"><p>1</p></label>
-                    <label class="control-btn" for="slide2"><p>2</p></label>
-                    <label class="control-btn" for="slide3"><p>3</p></label>
+                    <label class="control-btn" for="slide1">
+                        <p>1</p>
+                    </label>
+                    <label class="control-btn" for="slide2">
+                        <p>2</p>
+                    </label>
+                    <label class="control-btn" for="slide3">
+                        <p>3</p>
+                    </label>
                 </div>
             </div>
 
@@ -222,7 +234,7 @@
                     <div id="precio">
                     </div>
 
-                    <a class="continue" href="#slide-5">
+                    <a class="continue" href="#transicion">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -234,11 +246,43 @@
             </div>
         </div>
 
+        <div id="transicion"></div>
+        <div class="page-slide">
+            <div class="slide container-lg">
+                <a class="back" href="#slide-4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg></a>
+
+                <div class="text">
+                    <p style="margin-top: 0;">
+                        Si como resultado has obtenido una vivienda de más de 80m2 estás de suerte, si no es así,
+                        siempre puedes probar en un barrio más alejado del centro o construir tu día a día en un espacio
+                        más pequeño.
+                    </p>
+                    <p style="margin-top: 0;">
+                        Tengas la edad que tengas es probable que tu vaya cambiando y las necesidades de tu futuro hogar
+                        evolucionen con ella. Siendo evidente la evolución de las necesidades de una vivienda muchas
+                        personas optan por el alquiler durante un largo periodo de sus vidas, una opción más flexible y
+                        aparentemente más accesible pero también con sus efectos colaterales.
+
+                    </p>
+
+                    <div class="question">
+                        <p class="frase">¿Sientes que vivir en alquiler es tirar el dinero? </p>
+                        <div class="caja"><a href="#slide-5" > <p>SI</p> <p>NO</p> </a></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
         <div id="slide-5"></div>
         <div class="page-slide">
             <div class="slide s5 container-lg">
-                <a class="back" href="#slide-3"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                <a class="back" href="#transition"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                         fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
@@ -254,34 +298,34 @@
                     </div>
                     <div class="force-input">
                         <h6>Cual es tu salario neto medio anual?</h6>
-                        <div><input type="number" id="salary" name="salary" min="1" max="999999999" value="30000" style="width: 100px;"
-                                onchange="mortgageCalculator()"> € </div>
+                        <div><input type="number" id="salary" name="salary" min="1" max="999999999" value="30000"
+                                style="width: 100px;" onchange="mortgageCalculator()"> € </div>
                     </div>
                     <div class="force-input">
                         <h6>Cuando cuesta la casa?</h6>
-                        <input type="number" id="price" name="price" min="0" max="999999999" value="170000" style="width: 100px;"
-                            onchange="mortgageCalculator()">
+                        <input type="number" id="price" name="price" min="0" max="999999999" value="170000"
+                            style="width: 100px;" onchange="mortgageCalculator()">
                     </div>
                     <div class="force-input">
                         <h6> Cuanto es la entrada?</h6>
-                        <input type="number" id="down" name="down" min="0" max="999999999" value="34000" style="width: 100px;"
-                            onchange="mortgageCalculator()">
+                        <input type="number" id="down" name="down" min="0" max="999999999" value="34000"
+                            style="width: 100px;" onchange="mortgageCalculator()">
                     </div>
                     <div class="force-input">
                         <h6> Cuanto dura la hipoteca?</h6>
                         <input type="number" id="years" name="years" min="1" max="100" value="30" style="width: 60px;"
-                            onchange="mortgageCalculator()"> 
-                    </div>
+                            onchange="mortgageCalculator()">
+                    </div>100%
                     <div class="force-input">
                         <h6> ¿Que interes ofrece el banco?</h6>
-                        <div><input type="number" id="interest" name="interest" min="0" max="100" value="1.75" step="0.01" style="width: 70px;"
-                        onchange="mortgageCalculator()">%</div>
+                        <div><input type="number" id="interest" name="interest" min="0" max="100" value="1.75"
+                                step="0.01" style="width: 70px;" onchange="mortgageCalculator()">%</div>
                     </div>
                 </div>
                 <div class="inputs-section-results" style="padding-bottom: 2rem;">
                     <div class="input-result">
                         <h6> Cuota mensual</h6>
-                        <div id="payment"></div> 
+                        <div id="payment"></div>
                     </div>
                     <div class="input-result">
                         <h6> Coste total hipoteca</h6>
@@ -295,7 +339,7 @@
 
                 <div class="text">
                     <a class="continue weeks" href="#slide-6">
-                    Calcular en semanas de trabajo
+                        Calcular en semanas de trabajo
                     </a>
                 </div>
             </div>
@@ -304,7 +348,7 @@
         <div id="slide-6"></div>
         <div class="page-slide last-graph">
             <div class="slide s6 container-lg">
-                <a class="back" href="#slide-3"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                <a class="back" href="#slide-5"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                         fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
@@ -312,26 +356,64 @@
 
                 <h1 style="padding-top: 2rem;">Calculadora esfuerzo financiero</h1>
 
-              <div class="row"> Pagar la hipoteca me requiere <div id="weeksfortotalcost"></div> semanas de trabajo ademas de lo que me ha costado ahorrar la entrada.</div> 
-                <div class="row">Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de trabajo ademas de lo que me ha costado ahorrar la entrada.</div>
-               <div class="row">Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div> semanas de trabajo ademas de lo que me ha costado ahorrar la entrada.</div> 
+            
+                <div class="row"> Pagar la hipoteca me requiere ><div id="weeksfortotalcost"></div> >semanas de trabajo
+                    ademas de lo que me ha costado ahorrar la entrada.</div>
+                <div class="row">Pagar el capital de la hipoteca me requiere <div id="weeksforcapital"></div> semanas de
+                    trabajo ademas de lo que me ha costado ahorrar la entrada.</div>
+                <div class="row">Pagar los intereses de la hipoteca me requiere <div id="weeksforinterests"></div>
+                    semanas de trabajo ademas de lo que me ha costado ahorrar la entrada.</div>
 
-             <!--   <div id="chart"></div> -->
+                 <div class="graph"> <div id="chart"></div> </div>
+                <div class="text">
+                    <a class="continue" href="#slide-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
 
+        <div id="slide-7"></div>
+        <div class="page-slide last-graph">
+            <div class="slide s7 container-lg">
+                <a class="back" href="#slide-3"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg></a>
 
-       
-     
+                <div class="text">
+                    <p style="margin-top: 0;">
+                        Las respuestas y resultados de esta breve exploración serán diversos, pero es muy probable que
+                        el acceso a la vivienda sea para ti un reto presente o próximo. Las causas del problema son
+                        conocidas, las soluciones posibles todavía un debate. <br>
+                    </p>
+                    <p style="margin-top: 0;">
+                        Esta dosis de realismo tiene como intención despertarte de la pesadilla que es el acceso a la
+                        vivienda digna (de alquiler o de compra) en grandes ciudades como Madrid. Si te ha sido útil,
+                        comparte este proyecto con tus amigas, vecinas y colectivos que trabajen por esta causa. <br>
+                    </p>
+                    <p style="margin-top: 0;">
+                        Si necesitas un poco de optimismo antes de cerrar la ventana de tu ordenador, puedes explorar
+                        algunas propuestas de cohousing, alquileres con opción a compra, cooperativas de vivienda en
+                        derecho de uso, coliving u otros proyectos de vivienda que pueden ayudarnos a imaginar otras
+                        formas de habitar el futuro. <br>
+                    </p>
+                </div>
+            </div>
 
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
-            integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.29.0/apexcharts.min.js"
-            integrity="sha512-fe6OklXva8AWoqdwgkE7Ni4uWgHGWxFQWZx4lYehzY2Qrst5YfogjAbnLd6egsoTrnjGI9/LYt1Ont2cKNbP2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="app.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+                integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.29.0/apexcharts.min.js"
+                integrity="sha512-fe6OklXva8AWoqdwgkE7Ni4uWgHGWxFQWZx4lYehzY2Qrst5YfogjAbnLd6egsoTrnjGI9/LYt1Ont2cKNbP2A=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="app.js"></script>
 </body>
 
 </html>

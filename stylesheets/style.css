@@ -320,6 +320,7 @@ color: var(--main-color)
 
 .row{
     display: flex;
+    font-size: 18px;
 }
 
 .control-btn{
@@ -334,3 +335,42 @@ color: var(--main-color)
     bottom: 5%;
     left: 40%;
 } 
+
+.question .caja a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--main-color)
+}
+
+.question {
+    font-family: monospace;
+    color: var(--main-color)
+}
+
+.question .frase{
+margin-bottom: 0px;
+}
+
+.question .caja p{
+padding: 1rem 2rem;
+border: 1px solid var(--main-color);
+opacity: 0.6;
+cursor: pointer;
+}
+
+.question .caja p:hover{
+opacity: 1;
+    }
+
+
+    .graph{
+        margin-top: 2rem;
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
+    .graph .chart{
+ overflow-y: scroll;
+    }
